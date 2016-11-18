@@ -13,7 +13,7 @@
                 url: '/yapi?stocks=' + stockSearch.ticker
             }).done(function(data){
                 if(data.historical.length === 0) {
-                    $('#stock-search').append('<br><span class="error-msg">Please enter a valid stock ticker.</span>');
+                    $('#transaction-msg').css('class', 'error-msg').html('Please enter a valid stock ticker.');
                 };
                 if(!data.snapshot[0].ask) {
                     data.snapshot[0].ask = data.historical[data.historical.length - 1].close;

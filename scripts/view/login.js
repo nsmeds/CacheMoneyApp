@@ -65,7 +65,7 @@
                 data: JSON.stringify(data),
                 error: function(error) {
                     console.log(error);
-                    $('#signup-form').prepend('<span class="error-msg">Error: ' + error.responseJSON.error + '</span>');
+                    $('#stock-msg').css('class', 'error-msg').html('Error: ' + error.responseJSON.error);
                 }
             })
             .done(function(user) {
